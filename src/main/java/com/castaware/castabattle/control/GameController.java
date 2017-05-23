@@ -12,7 +12,6 @@ import com.castaware.castabattle.domain.Board;
 import com.castaware.castabattle.domain.CellType;
 import com.castaware.castabattle.domain.Game;
 
-
 @Controller
 @RequestMapping("/game") // .../castabattle/spring/game
 public class GameController {

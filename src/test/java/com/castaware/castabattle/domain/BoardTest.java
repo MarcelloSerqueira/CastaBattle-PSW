@@ -6,15 +6,12 @@ import org.junit.Test;
 
 import static com.castaware.castabattle.domain.CellType.*;
 
-public class BoardTest 
-{
+public class BoardTest {
 	Board board;
 	
 	@Before
-	public void setUpBoard()
-	{					
-		CellType[][] template = new CellType[][]
-		{
+	public void setUpBoard() {					
+		CellType[][] template = new CellType[][] {
 			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},   
 			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},	
 			{WATER, WATER,   BOAT,    WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		                                      
@@ -32,8 +29,7 @@ public class BoardTest
 	}
 	
 	@Test
-	public void testWaterFire()
-	{
+	public void testWaterFire() {
 		Assert.assertEquals(board.readInGame(1, 1), CellType.HIDDEN);
 		CellType target = board.fire(1, 1);
 		Assert.assertEquals(target, CellType.WATER);
@@ -41,8 +37,7 @@ public class BoardTest
 	}
 	
 	@Test 
-	public void testShipFire()
-	{
+	public void testShipFire() {
 		Assert.assertEquals(board.readInGame(2, 8), CellType.HIDDEN);
 		CellType target = board.fire(2, 8);
 		Assert.assertEquals(target, CellType.CRUISER);

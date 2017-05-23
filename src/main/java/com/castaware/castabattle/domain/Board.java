@@ -3,8 +3,7 @@ package com.castaware.castabattle.domain;
 import java.util.Arrays;
 import java.util.HashMap;
 
-public class Board 
-{
+public class Board {
 	private static int SIZE = 10;
 	
 	private CellType[][] boardGame     = new CellType[SIZE][SIZE];

@@ -1,7 +1,6 @@
 package com.castaware.castabattle.domain;
 
-public enum CellType 
-{
+public enum CellType {
 	WATER(false),
 	BOAT(true),
 	CRUISER(true),
@@ -14,13 +13,11 @@ public enum CellType
 	
 	private boolean ship;
 	
-	private CellType(boolean ship)
-	{
+	private CellType(boolean ship) {
 		this.ship = ship;
 	}
 	
-	public boolean isShip() 
-	{
+	public boolean isShip() {
 		return ship;
 	}
 }

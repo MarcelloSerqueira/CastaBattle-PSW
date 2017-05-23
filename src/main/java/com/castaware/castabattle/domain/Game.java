@@ -7,13 +7,11 @@ import static com.castaware.castabattle.domain.CellType.DESTROYER;
 import static com.castaware.castabattle.domain.CellType.SUBMARINE;
 import static com.castaware.castabattle.domain.CellType.WATER;
 
-public class Game 
-{
+public class Game {
 	private static Board userBoard;
 	private static Board cpuBoard;
 	
-	private static CellType[][] user = new CellType[][]
-		{
+	private static CellType[][] user = new CellType[][] {
 /*			{WATER,      WATER,      WATER,      WATER,      WATER,      BOAT,      WATER,     SUBMARINE, SUBMARINE, WATER},   
 			{DESTROYER,  DESTROYER,  DESTROYER,  DESTROYER,  WATER,      WATER,     WATER,     WATER,     WATER,     WATER},	
 			{WATER,      WATER,      WATER,      WATER,      WATER,      WATER,     WATER,     WATER,     WATER,     BOAT},		                                      
@@ -36,8 +34,7 @@ public class Game
 			{WATER, WATER, WATER, WATER, WATER, WATER, WATER, WATER, WATER, WATER},   
 		};
 
-	private static CellType[][] cpu = new CellType[][]
-		{
+	private static CellType[][] cpu = new CellType[][] {
 			{WATER,      WATER,      WATER,      WATER,      WATER,      BOAT,      WATER,     SUBMARINE, SUBMARINE, WATER},   
 			{DESTROYER,  DESTROYER,  DESTROYER,  DESTROYER,  WATER,      WATER,     WATER,     WATER,     WATER,     WATER},	
 			{WATER,      WATER,      WATER,      WATER,      WATER,      WATER,     WATER,     WATER,     WATER,     BOAT},		                                      
