@@ -4,7 +4,7 @@
     <artifactId>castabattle</artifactId>
     <packaging>war</packaging>
     <version>0.1-alpha-SNAPSHOT</version>
-    <name>pswebproj</name>    
+    <name>castabattle</name>    
 
 	<properties>
 		<java.version>1.8</java.version>
@@ -61,7 +61,7 @@
     </dependencies>
     
     <build>
-        <finalName>pswebproj</finalName>
+        <finalName>castabattle</finalName>
         <sourceDirectory>src/main/java</sourceDirectory>
         <resources>
             <resource>
@@ -91,7 +91,7 @@
 				<configuration>					
 					<warSourceDirectory>WebContent</warSourceDirectory>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
-					<warName>pswebproj</warName>
+					<warName>castabattle</warName>
 				</configuration>
 			</plugin>			
         </plugins>               
