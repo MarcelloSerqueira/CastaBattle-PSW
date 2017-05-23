@@ -13,36 +13,39 @@ public class BoardTest
 	@Before
 	public void setUpBoard()
 	{					
-		CellType[][] template = new CellType[][]  { {WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},   
-													{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},	
-													{WATER, WATER,   BOAT ,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		                                      
-													{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		
-													{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		
-													{WATER, WATER,   WATER,   WATER,   WATER,   WATER, BOAT , WATER, WATER, WATER},		
-													{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		
-													{WATER, CRUISER, CRUISER, CRUISER, CRUISER, WATER, WATER, WATER, WATER, WATER},		
-													{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		
-													{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER} };		
+		CellType[][] template = new CellType[][]
+		{
+			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},   
+			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},	
+			{WATER, WATER,   BOAT,    WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		                                      
+			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		
+			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		
+			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, BOAT , WATER, WATER, WATER},		
+			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		
+			{WATER, CRUISER, CRUISER, CRUISER, CRUISER, WATER, WATER, WATER, WATER, WATER},		
+			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER},		
+			{WATER, WATER,   WATER,   WATER,   WATER,   WATER, WATER, WATER, WATER, WATER}
+		};		
 														
 		board = new Board();
-		board.initBoard(template);
+		board.setBoardTemplate(template);
 	}
 	
 	@Test
 	public void testWaterFire()
 	{
-		Assert.assertEquals(board.readInGame("A",1),CellType.HIDDEN);
-		CellType target = board.fire("A",1);
-		Assert.assertEquals(target,CellType.WATER);
-		Assert.assertEquals(board.readInGame("A",1),CellType.WATER);
+		Assert.assertEquals(board.readInGame(1, 1), CellType.HIDDEN);
+		CellType target = board.fire(1, 1);
+		Assert.assertEquals(target, CellType.WATER);
+		Assert.assertEquals(board.readInGame(1, 1), CellType.WATER);
 	}
 	
 	@Test 
 	public void testShipFire()
 	{
-		Assert.assertEquals(board.readInGame("B",8),CellType.HIDDEN);
-		CellType target = board.fire("B",8);
-		Assert.assertEquals(target,CellType.CRUISER);
-		Assert.assertEquals(board.readInGame("B",8),CellType.FIRE);
+		Assert.assertEquals(board.readInGame(2, 8), CellType.HIDDEN);
+		CellType target = board.fire(2, 8);
+		Assert.assertEquals(target, CellType.CRUISER);
+		Assert.assertEquals(board.readInGame(2, 8), CellType.FIRE);
 	}
 }
